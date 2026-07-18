@@ -1,0 +1,24 @@
+# Credentials
+.env
+.env.*
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+dist/
+build/
+*.egg-info/
+
+# Research data and generated analysis
+research_export/
+data/
+outputs/
+results/
+
+# Editors and operating systems
+.DS_Store
+.idea/
+.vscode/
