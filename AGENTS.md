@@ -4,7 +4,7 @@
 
 This repository contains public tools and skills for researchers studying Social RV's remote viewing dataset. It does not contain the dataset or grant access to it.
 
-Researchers must already have a Research API key. If they do not, direct them to [research@social-rv.com](mailto:research@social-rv.com). Never ask a user to paste a key into chat, source code, a notebook, an issue, or a pull request.
+Researchers must already have a Research API key. Approved researchers can generate one in their Social RV account settings; otherwise direct them to [research@social-rv.com](mailto:research@social-rv.com). Never ask a user to paste a key into chat, source code, a notebook, an issue, or a pull request.
 
 ## Sources of truth
 

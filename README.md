@@ -13,7 +13,7 @@ The toolkit is open source. Access to research data is not public and requires a
 
 ## Request API access
 
-Email [research@social-rv.com](mailto:research@social-rv.com) with a short description of your research project. Never commit an API key or paste one into an issue, pull request, notebook, or agent conversation.
+Email [research@social-rv.com](mailto:research@social-rv.com) with a short description of your research project. Once your Social RV account is approved as a researcher, generate a key from the Research API section of your [account settings](https://social-rv.com/settings). Never commit an API key or paste one into an issue, pull request, notebook, or agent conversation.
 
 Once approved, provide the key through your environment:
 
@@ -57,6 +57,8 @@ uv run social-rv-export pull-users
 Use `uv run social-rv-export --help` for all options. See the [export guide](docs/export-cli.md) and [dataset reference](docs/dataset.md) for output details.
 
 Downloaded research data is ignored by Git. Store it according to the terms under which access was granted.
+
+If you use Doppler or plan to run future Modal and judge utilities, see the [secrets and environment variables guide](docs/secrets.md).
 
 ## Agent skills
 
