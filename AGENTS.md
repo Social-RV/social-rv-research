@@ -65,3 +65,10 @@ Use the `remote-viewing-research` skill for hypothesis and analysis work and the
 ## Public mirror
 
 The private Social RV monorepo is the source of truth. A GitHub Actions workflow publishes this directory to `Social-RV/social-rv-research`. Do not add workflows or code that pull public-repository changes back automatically.
+
+## Cursor Cloud specific instructions
+
+- `uv` is the package manager; it is installed under `~/.local/bin` and made available to shells via `~/.bashrc` (the installer's `. "$HOME/.local/bin/env"` line). Dependencies are refreshed on session start by the update script (`uv sync --locked --group dev`); you do not need to reinstall them.
+- Standard dev commands are already documented in `README.md` (`uv run ruff check .`, `uv run pytest`, `uv run social-rv-export ...`). Run them with `uv run` so they use the project `.venv`.
+- The export CLI (`social-rv-export`) requires a `RESEARCH_API_KEY`, which is not present in this environment and must not be committed. To exercise the export end-to-end without a key, point `--base-url` (or `RESEARCH_BASE_URL`) at a local mock that serves `/api/research/{targets,sessions,users}` with the JSON shapes `src/social_rv_research/export.py` expects (keys `targets`/`sessions`/`users`, plus `total_pages`, `total_count`, and `opt_out_summary`); the CLI also downloads any `imageUrl`/`sessionMediaUrls` it receives.
+- `.agents/skills/social-rv-research-api/scripts/fetch_openapi.py` reaches the live public API and needs no key; use it to sanity-check outbound network access and the current API contract.
