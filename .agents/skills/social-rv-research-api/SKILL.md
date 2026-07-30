@@ -38,6 +38,7 @@ Use `https://social-rv.com/api/research/swagger-ui` for interactive exploration.
 5. Record retrieval time, base URL, filters, and the OpenAPI `info.version`.
 6. Treat `sessionMediaUrls` and target `imageUrl` values as signed, short-lived URLs.
 7. Avoid bulk media downloads until the metadata query and intended sample are verified.
+8. For tens of thousands of files, prefer `GET /api/research/session-media` / `GET /api/research/target-media` for manifests, then `POST /api/research/session-media/sign` and `POST /api/research/target-media/sign` in batches of ≤500 (`expires_in` up to 86400). Do not re-fetch full session payloads just to refresh URLs. Cache downloaded bytes (e.g. Modal volume) after the first pull.
 
 For a complete local export, use:
 

@@ -53,7 +53,7 @@ This directory is published as a standalone repository. All files inside it must
 - Use appropriate null models and uncertainty estimates. Do not present descriptive patterns as evidence of causation.
 - Preserve scripts, parameters, random seeds, API retrieval time, and a hash or manifest of input data.
 
-Use the `remote-viewing-research` skill for hypothesis and analysis work and the `social-rv-research-api` skill for API access.
+Use the `remote-viewing-research` skill for hypothesis and analysis work, the `social-rv-research-api` skill for API access, the `social-rv-research-db` skill only when `RESEARCH_DATABASE_URL` is present for privileged read-only SQL, and the `social-rv-source-repo` skill when you need the private Social RV monorepo source (clone may fail without access — continue without it).
 
 ## Documentation
 

@@ -66,6 +66,8 @@ Canonical skills live in `.agents/skills`. Compatibility symlinks expose them to
 
 - `social-rv-research-api`: discover and query the live Research API safely
 - `remote-viewing-research`: develop hypotheses and reproducible analysis plans for Social RV data
+- `social-rv-research-db`: optional privileged read-only Postgres (`RESEARCH_DATABASE_URL`) when provisioned; media still via Research API sign endpoints; never write production data
+- `social-rv-source-repo`: optional look at the private Social RV monorepo source; if GitHub access fails, continue without it
 
 Repository-wide agent instructions are in [AGENTS.md](AGENTS.md).
 

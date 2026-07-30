@@ -3,7 +3,7 @@
 Researchers use their own Social RV, Vercel, LangSmith, and Modal accounts.
 
 
-Create a Doppler project for this repository, such as `social-rv-research`, and add exactly these six values:
+Create a Doppler project for this repository, such as `social-rv-research`, and add these standard values:
 
 | Name                 | Value                                           |
 | -------------------- | ----------------------------------------------- |
@@ -15,6 +15,18 @@ Create a Doppler project for this repository, such as `social-rv-research`, and 
 | `MODAL_TOKEN_SECRET` | The token secret from the same Modal token pair |
 
 `LANGSMITH_TRACING` is configuration rather than a credential, but it belongs in the same Doppler configuration so research runs consistently emit traces.
+
+### Optional privileged database access
+
+Only for environments Social RV explicitly provisions (not self-serve for ordinary researchers):
+
+| Name | Value |
+| ---- | ----- |
+| `RESEARCH_DATABASE_URL` | Postgres URI for a **read-only** Social RV database — preferably the Supabase **session pooler** connection string for a **read replica** |
+
+Use this for arbitrary **read-only** SQL. Never write to Postgres or object storage; persist research outputs to Modal, LangSmith, or local exports instead. Download media through the Research API sign endpoints (`/api/research/session-media/sign`, `/api/research/target-media/sign`), not with Storage or service-role keys. See the `social-rv-research-db` skill.
+
+Do **not** put this URL in the main Social RV app Doppler configs (`social-rv` staging/prod) unless you are intentionally wiring the product to the replica.
 
 ## Generate a Social RV Research API key
 
@@ -72,12 +84,12 @@ The Modal client reads this pair automatically. You can use `modal token new` fo
 
 ## Run with Doppler
 
-After adding all six values:
+After adding the standard values:
 
 ```bash
 doppler run -- uv run social-rv-export pull-sessions
 ```
 
-Do not add Social RV database credentials, service-role keys, server secrets, or direct production access. Research tools must access Social RV data through the Research API.
+Ordinary research access is Research API only. Do not add Supabase service-role keys, Storage S3 keys, or the primary (writable) production database URL. If `RESEARCH_DATABASE_URL` is provisioned, it must point at a read-only replica (or equivalent), not the primary writer.
 
 Never commit `.env` files or put credentials in commands, URLs, notebooks, logs, issues, pull requests, or agent conversations. Rotate any credential immediately if it is exposed.
