@@ -64,3 +64,12 @@
 - [x] Complete the full checkpointed Modal run.
 - [x] Compare E2 against GPT-5.2 and GPT-5 Mini on shared sessions.
 - [x] Preserve results in private Modal and LangSmith assets.
+
+## GPT-5.6 Luna extension
+
+- [ ] Add GPT-5.6 Luna ranking with March decoys as cell F.
+- [ ] Validate multimodal transport, schemas, and resolved models.
+- [ ] Run an outcome-blind pilot and project cost.
+- [ ] Complete the full checkpointed Modal run.
+- [ ] Compare F against GPT-5.2, GPT-5 Mini, and Gemini.
+- [ ] Preserve results in private Modal and LangSmith assets.

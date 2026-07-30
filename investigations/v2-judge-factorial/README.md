@@ -128,3 +128,21 @@ This separates the capability under test—Gemini target ranking—from an
 ancillary schema/reasoning check that previously caused Gemini rate-limit and
 retry failures. E2 requires a fresh outcome-blind pilot and is reported
 separately from the failed E compatibility pilot.
+
+## GPT-5.6 Luna extension
+
+Add one further exploratory cell after completing E2:
+
+| Cell | Ranking model | Verifier | Decoys |
+| --- | --- | --- | --- |
+| F | GPT-5.6 Luna | GPT-5 Mini | March evaluation set |
+
+Cell F reuses the same validated manifest, media preprocessing, March candidate
+order, true-target position, ranking prompt, strict schemas, verification
+prompt, and GPT-5 Mini text verifier as E2. Planned paired comparisons are F−A
+(Luna versus GPT-5.2), F−C (Luna versus GPT-5 Mini), and F−E2 (Luna versus
+Gemini).
+
+The extension is exploratory and requires the same outcome-blind compatibility
+pilot, resolved-model check, cost projection, bounded Modal concurrency, and
+checkpoint reconciliation before scaling.
