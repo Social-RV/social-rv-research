@@ -57,7 +57,9 @@
 ## Gemini extension
 
 - [ ] Add Gemini 3.1 Flash Lite with March decoys as cell E.
-- [ ] Validate image transport and strict structured outputs.
+- [x] Validate image transport and strict ranking outputs.
+- [x] Stop the all-Gemini cell after it failed the verification reliability gate.
+- [ ] Validate revised E2 with a fixed GPT-5 Mini text verifier.
 - [ ] Run an outcome-blind pilot and project cost.
 - [ ] Complete the full checkpointed Modal run.
 - [ ] Compare E against GPT-5.2 and GPT-5 Mini on shared sessions.

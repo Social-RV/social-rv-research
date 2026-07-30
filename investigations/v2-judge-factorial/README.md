@@ -116,3 +116,15 @@ Before scaling:
 
 This extension is exploratory because it was added after observing A–D. It
 must remain separate from the original factorial's confirmatory interpretation.
+
+### Compatibility adaptation
+
+The outcome-blind all-Gemini pilot passed image transport and strict ranking
+schemas but failed the verification reliability gate, so it must not be
+scaled. A revised cell E2 keeps Gemini 3.1 Flash Lite as the multimodal ranking
+model and fixes GPT-5 Mini as the text-only reasoning-consistency verifier.
+
+This separates the capability under test—Gemini target ranking—from an
+ancillary schema/reasoning check that previously caused Gemini rate-limit and
+retry failures. E2 requires a fresh outcome-blind pilot and is reported
+separately from the failed E compatibility pilot.
