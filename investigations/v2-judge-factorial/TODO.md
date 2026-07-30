@@ -46,3 +46,10 @@
 - [x] Run public repository lint and tests.
 - [x] Keep unpublished results and participant data out of Git.
 - [x] Produce a private evidence-backed report artifact.
+
+## Visualization
+
+- [x] Reconstruct frozen production score-history cohorts.
+- [x] Plot cumulative cohort accuracy against global session chronology.
+- [x] Add controlled factorial cells on the same session-order axis.
+- [x] Preserve only aggregate graph outputs outside Git.
