@@ -91,3 +91,28 @@ differ.
 - Production Postgres and object storage remain permanently read-only.
 - Historical LangSmith results must not be promoted into production or marked
   current.
+
+## Gemini 3.1 Flash Lite extension
+
+After completing the 2×2 experiment, add one pre-specified exploratory cell:
+
+| Cell | Model | Decoys |
+| --- | --- | --- |
+| E | Gemini 3.1 Flash Lite | March evaluation set |
+
+Cell E reuses the validated factorial manifest, cached media, March candidate
+IDs, deterministic candidate order, true-target position, prompts, structured
+schemas, verification policy, and primary top-five outcome. Its planned
+comparisons are E−A (Gemini versus GPT-5.2) and E−C (Gemini versus GPT-5 Mini)
+on the exact shared finished-session sets.
+
+Before scaling:
+
+- validate multimodal image/PDF transport through AI Gateway;
+- validate strict ranking and verification schemas;
+- confirm the resolved model identifier;
+- run the existing outcome-blind pilot and project full-cohort cost;
+- stop on persistent schema, image, provider, or rate-limit failures.
+
+This extension is exploratory because it was added after observing A–D. It
+must remain separate from the original factorial's confirmatory interpretation.

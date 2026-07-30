@@ -53,3 +53,12 @@
 - [x] Plot cumulative cohort accuracy against global session chronology.
 - [x] Add controlled factorial cells on the same session-order axis.
 - [x] Preserve only aggregate graph outputs outside Git.
+
+## Gemini extension
+
+- [ ] Add Gemini 3.1 Flash Lite with March decoys as cell E.
+- [ ] Validate image transport and strict structured outputs.
+- [ ] Run an outcome-blind pilot and project cost.
+- [ ] Complete the full checkpointed Modal run.
+- [ ] Compare E against GPT-5.2 and GPT-5 Mini on shared sessions.
+- [ ] Preserve results in private Modal and LangSmith assets.
