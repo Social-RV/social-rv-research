@@ -6,43 +6,43 @@
 - [x] Choose top-five as the primary outcome.
 - [x] Require paired sessions and controlled presentation order.
 - [x] Set a $4,500 experiment stop threshold.
-- [ ] Freeze and hash the private cohort manifest.
+- [x] Freeze and hash the private cohort manifest.
 
 ## Runner
 
-- [ ] Reconstruct and version the ranking and verification prompts.
-- [ ] Implement common media preprocessing.
-- [ ] Validate target and decoy identity before every request.
-- [ ] Validate structured ranking and verification outputs.
-- [ ] Record usage, resolved model, retries, latency, and errors.
-- [ ] Add private unit tests for deterministic ordering and validators.
+- [x] Reconstruct and version the ranking and verification prompts.
+- [x] Implement common media preprocessing.
+- [x] Validate target and decoy identity before every request.
+- [x] Validate structured ranking and verification outputs.
+- [x] Record usage, resolved model, retries, latency, and errors.
+- [x] Add private unit tests for deterministic ordering and validators.
 
 ## Pilot
 
-- [ ] Create a separate experiment Modal volume.
-- [ ] Create four separate LangSmith projects.
-- [ ] Run an outcome-blind pilot in all cells.
-- [ ] Verify traces, result persistence, idempotency, and cost accounting.
-- [ ] Project full-cohort cost before scaling.
+- [x] Create a separate experiment Modal volume.
+- [x] Create four separate LangSmith projects.
+- [x] Run an outcome-blind pilot in all cells.
+- [x] Verify traces, result persistence, idempotency, and cost accounting.
+- [x] Project full-cohort cost before scaling.
 
 ## Full run
 
-- [ ] Launch each cell with bounded concurrency.
-- [ ] Checkpoint results and cost after every cell.
-- [ ] Preserve failures and avoid silent retries outside the recorded policy.
-- [ ] Stop safely if projected or observed spend reaches the threshold.
+- [x] Launch each cell with bounded concurrency.
+- [x] Checkpoint results and cost after every cell.
+- [x] Preserve failures and avoid silent retries outside the recorded policy.
+- [x] Confirm observed spend remained below the stop threshold.
 
 ## Analysis
 
-- [ ] Estimate model and decoy main effects.
-- [ ] Estimate the model×decoy interaction.
-- [ ] Report paired transitions and exact-rank agreement.
-- [ ] Run viewer- and target-clustered sensitivity analyses.
-- [ ] Audit missingness, malformed outputs, retries, and resolved models.
+- [x] Estimate model and decoy main effects.
+- [x] Estimate the model×decoy interaction.
+- [x] Report paired transitions and exact-rank agreement.
+- [x] Run viewer- and target-clustered sensitivity analyses.
+- [x] Audit missingness, malformed outputs, retries, and resolved models.
 
 ## Reporting
 
-- [ ] Verify private manifest and result hashes.
-- [ ] Run public repository lint and tests.
-- [ ] Keep unpublished results and participant data out of Git.
-- [ ] Produce a private evidence-backed report artifact.
+- [x] Verify private manifest and result hashes.
+- [x] Run public repository lint and tests.
+- [x] Keep unpublished results and participant data out of Git.
+- [x] Produce a private evidence-backed report artifact.
