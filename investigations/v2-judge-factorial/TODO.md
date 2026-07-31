@@ -76,10 +76,10 @@
 
 ## DB-compatible GPT-5 Mini export
 
-- [ ] Add full-result GPT-5 Mini + March-decoy cell G.
-- [ ] Validate complete production result JSON shape.
-- [ ] Run outcome-blind pilot and full checkpointed Modal cell.
-- [ ] Generate a non-current `rv_session_judge_runs` CSV.
-- [ ] Generate and validate a separate transactional promotion script.
-- [ ] Report final top-half rate, p-value, failures, and hashes.
-- [ ] Preserve private CSV and reports without production writes.
+- [x] Add full-result GPT-5 Mini + March-decoy cell G.
+- [x] Validate complete production result JSON shape.
+- [x] Run outcome-blind pilot and full checkpointed Modal cell.
+- [x] Generate a non-current `rv_session_judge_runs` CSV.
+- [x] Generate and validate a separate transactional promotion script.
+- [x] Report final top-half rate, p-value, failures, and hashes.
+- [x] Preserve private CSV and reports without production writes.
