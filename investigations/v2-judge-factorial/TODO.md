@@ -73,3 +73,13 @@
 - [x] Complete the full checkpointed Modal run.
 - [x] Compare F against GPT-5.2, GPT-5 Mini, and Gemini.
 - [x] Preserve results in private Modal and LangSmith assets.
+
+## DB-compatible GPT-5 Mini export
+
+- [ ] Add full-result GPT-5 Mini + March-decoy cell G.
+- [ ] Validate complete production result JSON shape.
+- [ ] Run outcome-blind pilot and full checkpointed Modal cell.
+- [ ] Generate a non-current `rv_session_judge_runs` CSV.
+- [ ] Generate and validate a separate transactional promotion script.
+- [ ] Report final top-half rate, p-value, failures, and hashes.
+- [ ] Preserve private CSV and reports without production writes.

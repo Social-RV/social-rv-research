@@ -146,3 +146,28 @@ Gemini).
 The extension is exploratory and requires the same outcome-blind compatibility
 pilot, resolved-model check, cost projection, bounded Modal concurrency, and
 checkpoint reconciliation before scaling.
+
+## DB-compatible GPT-5 Mini export
+
+Run a separate GPT-5 Mini + March-decoy cell G on the validated manifest to
+produce complete production-shaped judge results. Existing factorial cell C
+cannot be used for this export because it retained only the true-target rank
+and candidate IDs, not the complete ranking and per-target reasoning expected
+by `rv_session_judge_runs.result`.
+
+Cell G must retain:
+
+- all ten ranked target IDs, ranks, and reasoning;
+- overall reasoning;
+- the nine March decoy IDs;
+- true-target rank;
+- model/verifier identity, timestamps, attempts, usage, status, and errors.
+
+The private export contains exactly the database columns for
+`rv_session_judge_runs`. Imported rows default to `is_current=false` so they
+cannot collide with the unique current-run index. A separate reviewed
+transaction script may demote existing rows and promote imported rows later;
+neither operation is performed by this experiment.
+
+The CSV, manifest, validation report, and promotion script must remain outside
+Git. Production Postgres and object storage remain read-only.
