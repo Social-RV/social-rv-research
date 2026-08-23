@@ -28,6 +28,8 @@ Every session is scored by AI judges, and each judge's runs are tracked separate
 
 **Decoy judge** — a blind judge is shown the session alongside the real target plus 9 decoy targets and ranks them by similarity. `decoy_rank` of 1 means the judge matched the session to the correct target above all decoys; 10 is worst. `decoy_ids` lists the decoy targets used in that run. `decoy_judge_version` tells you which judge produced the score: `decoy_judge_v2` is the current, more accurate judge (nearly all sessions have been re-scored with it); `legacy` marks scores from the original pipeline. For re-scored sessions, `decoy_legacy_rank` preserves the original score so the two judges can be compared. (Older exports had a `comparative_judging_rank` column — it was an alias of `decoy_rank` and has been removed.)
 
+**Judge config** — `decoy_judge_metadata`, `decoy_legacy_judge_metadata`, and `targ_judge_metadata` are JSON snapshots of the judge configuration that produced each score (preset, model, gateway model, temperature, prompt variant, and related fields). Use these when mixing scores across time: a rank from `gpt-5-mini` is not automatically comparable to one from an earlier model. Empty when the config was not recorded — typical for legacy decoy rows and some early runs. The live Research API exposes the same object as `ai_judging.decoy.judge_metadata` (and the matching `decoy_legacy` / `targ` fields).
+
 Note: for a period early in the platform's history, decoys were not collected; those sessions have empty `decoy_ids`.
 
 **TARG judge** — an AI judge scores the session against the real target on the 0–7 TARG scale (`targ_score`, 7 is best) and writes a short justification (`targ_analysis`). This uses the same scale as `self_score` and community scores, so they are directly comparable.
@@ -151,17 +153,26 @@ Rank assigned by the blind decoy judge, which compared this session against the 
 **`decoy_judge_version`** — String
 Which decoy judge produced `decoy_rank`: `decoy_judge_v2` (the current, more accurate judge) or `legacy` (the original pipeline). Nearly all sessions have been re-scored with v2.
 
+**`decoy_judge_metadata`** — JSON string
+Snapshot of the decoy judge config for `decoy_rank` (preset, model, temperature, etc.). Empty when the config was not recorded.
+
 **`decoy_description`** — String
 The decoy judge's written reasoning for its ranking.
 
 **`decoy_legacy_rank`** — Integer
 For sessions re-scored by the v2 judge, the original legacy judge's rank — useful for comparing the two judges. Empty when the session was never scored by the legacy judge (or when `decoy_rank` itself is the legacy score).
 
+**`decoy_legacy_judge_metadata`** — JSON string
+Config snapshot for the legacy decoy run, when `decoy_legacy_rank` is present. Usually empty: legacy rows were not recorded with a config snapshot.
+
 **`targ_score`** — Float
 Score from the AI TARG judge on the 0–7 TARG scale (7 = exceptional match, 0 = no correspondence). Same scale as `self_score` and community scores.
 
 **`targ_analysis`** — String
 The AI TARG judge's written analysis of the session against the target.
+
+**`targ_judge_metadata`** — JSON string
+Snapshot of the TARG judge config for `targ_score`. Empty when the config was not recorded.
 
 **`session_text`** — String
 Plain-text session content the user typed directly in the app, as an alternative (or addition) to uploaded media. Empty for sessions with only uploaded files.

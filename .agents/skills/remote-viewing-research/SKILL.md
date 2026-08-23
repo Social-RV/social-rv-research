@@ -28,7 +28,7 @@ Use the `social-rv-research-api` skill to inspect the live API and retrieve a sm
 
 - Opt-out counts and possible selection bias
 - Missing sessions, media, text, targets, and judge outputs
-- Changes in tasking, platform behavior, and judge version over time
+- Changes in tasking, platform behavior, judge version, and judge model/preset (`ai_judging.*.judge_metadata`) over time
 - Repeated observations from the same viewers and targets
 - Unequal session counts per viewer
 - Low-value and unsubmitted-session filters

@@ -112,10 +112,13 @@ research_export/
 | community_score_count       | Number of community ratings                            |
 | decoy_rank                  | Decoy judge rank (1 best, 10 worst)                    |
 | decoy_judge_version         | `decoy_judge_v2` (current) or `legacy` (original)      |
+| decoy_judge_metadata        | JSON snapshot of the decoy judge config (model, etc.)  |
 | decoy_description           | Decoy judge's written reasoning                        |
 | decoy_legacy_rank           | Original pre-v2 rank, when re-scored by the v2 judge   |
+| decoy_legacy_judge_metadata | JSON snapshot for the legacy decoy run, when present   |
 | targ_score                  | AI TARG judge score (0–7, 7 best)                      |
 | targ_analysis               | AI TARG judge's written analysis                       |
+| targ_judge_metadata         | JSON snapshot of the TARG judge config                 |
 | session_text                | Plain text typed in the app instead of/besides uploads |
 | num_comments                | Number of comments                                     |
 | decoy_ids                   | Decoy target IDs from the decoy judge run (comma-sep)  |

@@ -54,10 +54,11 @@ Read `docs/export-cli.md` for operation and `docs/dataset.md` before interpretin
 
 - `ai_judging.decoy.rank`: target rank among the real target and decoys; lower is better.
 - `ai_judging.decoy.judge_version`: identifies the scoring pipeline.
+- `ai_judging.decoy.judge_metadata`: config snapshot for that run (preset, model, temperature, etc.). Empty object when the config was not recorded. The same field exists on `decoy_legacy` and `targ`.
 - `ai_judging.decoy_legacy`: preserves an earlier result where available; do not mix it silently with the current result.
 - `ai_judging.targ.score`: correspondence score on a 0–7 scale; higher is better.
 - `self_score` and community scores come from different raters and are not interchangeable with AI judge outputs.
-- Missing scores are not automatically zeroes.
+- Missing scores are not automatically zeroes. Stratify or report `judge_metadata.model` / `preset` when comparing scores across time.
 
 ## Protect research data
 

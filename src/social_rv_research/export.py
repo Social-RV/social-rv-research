@@ -246,10 +246,13 @@ SESSIONS_CSV_FIELDS = [
     "community_score_count",
     "decoy_rank",
     "decoy_judge_version",
+    "decoy_judge_metadata",
     "decoy_description",
     "decoy_legacy_rank",
+    "decoy_legacy_judge_metadata",
     "targ_score",
     "targ_analysis",
+    "targ_judge_metadata",
     "session_text",
     "num_comments",
     "decoy_ids",
@@ -268,6 +271,13 @@ USERS_CSV_FIELDS = [
 
 def flatten_target(t: dict) -> dict:
     return {f: t.get(f) for f in TARGETS_CSV_FIELDS}
+
+
+def json_cell(value: Any) -> str:
+    """Serialize a JSON object for a CSV cell. Empty/missing objects become ""."""
+    if not isinstance(value, dict) or not value:
+        return ""
+    return json.dumps(value, separators=(",", ":"), ensure_ascii=False)
 
 
 def flatten_session(s: dict) -> dict:
@@ -300,10 +310,13 @@ def flatten_session(s: dict) -> dict:
         "community_score_count": community.get("num_scores"),
         "decoy_rank": decoy.get("rank"),
         "decoy_judge_version": decoy.get("judge_version"),
+        "decoy_judge_metadata": json_cell(decoy.get("judge_metadata")),
         "decoy_description": decoy.get("description"),
         "decoy_legacy_rank": decoy_legacy.get("rank"),
+        "decoy_legacy_judge_metadata": json_cell(decoy_legacy.get("judge_metadata")),
         "targ_score": targ.get("score"),
         "targ_analysis": targ.get("analysis"),
+        "targ_judge_metadata": json_cell(targ.get("judge_metadata")),
         "session_text": s.get("session_text"),
         "num_comments": s.get("num_comments"),
         "decoy_ids": ",".join(decoys) if decoys else "",

@@ -48,7 +48,7 @@ This directory is published as a standalone repository. All files inside it must
 - State the hypothesis, outcome, unit of analysis, exclusions, and statistical test before inspecting outcome data when feasible.
 - Separate exploratory analysis from confirmatory analysis.
 - Account for repeated sessions from the same viewer; sessions are not automatically independent observations.
-- Report missingness, opt-outs, filtering, judge version, and scoring coverage.
+- Report missingness, opt-outs, filtering, judge version, judge model/preset (`judge_metadata`), and scoring coverage.
 - Prevent target leakage when evaluating models or judges. Split related observations by viewer, target, and time where the hypothesis requires it.
 - Use appropriate null models and uncertainty estimates. Do not present descriptive patterns as evidence of causation.
 - Preserve scripts, parameters, random seeds, API retrieval time, and a hash or manifest of input data.
